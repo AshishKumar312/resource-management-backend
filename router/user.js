@@ -19,7 +19,7 @@ router.get("/users",async (req,res)=>{
     }
     
     
-    //  const page = req.query.page ? parseInt(req.query.page): 1
+    //  const page = req.query.page ? parseInt(req.query.page):  1
     
     //  const size = req.query.size ? parseInt(req.query.size): 10
     //  const  skip = (page) *size;
