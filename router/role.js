@@ -173,6 +173,7 @@ router.post("/addAdmin",async (req,res)=>{
             status:200,msg:"Admin details has been updated"
           })
         }
+        
 
         else{
           res.status(400).json({
