@@ -87,6 +87,7 @@ router.post("/admins/login", async (req, res) => {
           }
     
         }
+
         else{
           res.status(400).json({ error: "Invalid Cradential" });
     
@@ -97,6 +98,7 @@ router.post("/admins/login", async (req, res) => {
         console.log(err)
       }
     });
+    
 
 // authentication for first page in frontend
 
