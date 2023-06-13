@@ -39,7 +39,7 @@ router.post("/super-admin/register", async (req, res) => {
     const adminExist = await superAdminRegisterData.findOne({ email: email });
 
     if (adminExist) {
-      return res.status(422).json({ error: "user is already exist" });
+      return res.status(422).json({error: "user is already exist" });
     }
 
     else if(password != cpassword){
@@ -53,7 +53,7 @@ router.post("/super-admin/register", async (req, res) => {
       const superAdminRegister = await data.save();
 
       if (superAdminRegister) {
-        res.status(201).json({ " message": "Super Admin register successfully" });
+        res.status(201).json({message: "Super Admin register successfully" });
       } else {
         res.status(422).json({ error: "Failed to register" });
       }
@@ -102,7 +102,7 @@ router.post("/super-admin/login", async (req, res) => {
           expires: new Date(Date.now() + 9000000),
           httpOnly:true
         })
-        res.status(201).json({"token":token})
+        res.status(201).json({"token":token,message:'Login Sucessfully'})
         
         
         
@@ -110,7 +110,7 @@ router.post("/super-admin/login", async (req, res) => {
 
     }
     else{
-      res.status(400).json({ error: "Invalid Cradential" });
+      res.status(400).json({error: "User Not Exist" });
 
     }
 
