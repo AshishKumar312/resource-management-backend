@@ -89,7 +89,7 @@ router.post("/login", async (req, res) => {
           expires: new Date(Date.now() + 9000000),
           httpOnly:true
         })
-        res.status(201).json({"token":token})
+        res.status(201).json({message:"Login Successfully",token:token})
         
         
         
@@ -97,7 +97,7 @@ router.post("/login", async (req, res) => {
 
     }
     else{
-      res.status(400).json({ error: "Invalid Cradential" });
+      res.status(400).json({error: "User Not Exist" });
 
     }
 
