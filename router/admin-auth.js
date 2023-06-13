@@ -60,7 +60,7 @@ router.post("/admins/login", async (req, res) => {
     
         console.log("Admin Login", adminLogin);
 
-        console.log(adminLogin.permissions,"permissions by adminLogin")
+        // console.log(adminLogin.permissions,"permissions by adminLogin")
         
         if(adminLogin){
     
@@ -80,7 +80,7 @@ router.post("/admins/login", async (req, res) => {
               expires: new Date(Date.now() + 9000000),
               httpOnly:true
             })
-            res.status(201).json({"token":token,"roles":adminLogin.role,"permissions":adminLogin.permissions,"status":adminLogin.status})
+            res.status(201).json({"token":token,"roles":adminLogin.role,"permissions":adminLogin.permissions,"status":adminLogin.status,message:"Login Successfully"})
             
             
             
@@ -89,7 +89,7 @@ router.post("/admins/login", async (req, res) => {
         }
 
         else{
-          res.status(400).json({ error: "Invalid Cradential" });
+          res.status(400).json({ error: "User Not Exist" });
     
         }
     
@@ -98,7 +98,7 @@ router.post("/admins/login", async (req, res) => {
         console.log(err)
       }
     });
-    
+
 
 // authentication for first page in frontend
 
