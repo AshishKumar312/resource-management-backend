@@ -26,7 +26,9 @@ app.use(cors());
 
 
 // Api Creation For Auth {import}
-
+app.get('/',(req,res)=>{
+  res.status(200).send({msg:'Welcome'})
+})
 app.use(require('./router/auth'));
 // app.use(require('./router/adminAuth'));
 app.use(require('./router/superAdminAuth'));
